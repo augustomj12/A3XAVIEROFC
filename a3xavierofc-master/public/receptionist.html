@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recepcionista - Sistema de Reservas de Mesa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="app-title">Sistema de Reservas de Mesa</h1>
+      <p class="app-subtitle">Painel do Recepcionista</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">Sistema de Reservas</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receptionist.html" class="active">Recepcionista</a></li>
+        <li><a href="waiter.html">Garçom</a></li>
+        <li><a href="manager.html">Gerente</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="user-role">Recepcionista</div>
+      
+      <div class="alert-container"></div>
+
+      <div class="card fade-in">
+        <h3 class="card-title">Nova Reserva</h3>
+        
+        <form id="reservation-form">
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label for="customer_name">Nome do Responsável</label>
+                <input type="text" id="customer_name" name="customer_name" placeholder="Digite o nome completo" required>
+              </div>
+            </div>
+            
+            <div class="form-col">
+              <div class="form-group">
+                <label for="party_size">Número de Pessoas</label>
+                <input type="number" id="party_size" name="party_size" min="1" max="8" placeholder="Ex: 4" required>
+                <small class="form-help">Máximo de 8 pessoas por reserva</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label for="date">Data da Reserva</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+            </div>
+            
+            <div class="form-col">
+              <div class="form-group">
+                <label for="time">Horário da Reserva</label>
+                <select id="time" name="time" required>
+                  <option value="">Selecione o horário</option>
+                  <option value="12:00">12h</option>
+                  <option value="13:00">13h</option>
+                  <option value="14:00">14h</option>
+                  <option value="15:00">15h</option>
+                  <option value="16:00">16h</option>
+                  <option value="17:00">17h</option>
+                  <option value="18:00">18h</option>
+                  <option value="19:00">19h</option>
+                  <option value="20:00">20h</option>
+                  <option value="21:00">21h</option>
+                  <option value="22:00">22h</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="table_number">Mesa Disponível</label>
+            <select id="table_number" name="table_number" required>
+              <option value="">Selecione uma mesa disponível</option>
+            </select>
+            <small class="form-help">Apenas mesas com capacidade suficiente serão exibidas</small>
+          </div>
+          
+          <div class="form-group mt-2">
+            <button type="submit" class="btn">Criar Reserva</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card fade-in">
+        <h3 class="card-title">Reservas Atuais</h3>
+        
+        <div class="table-responsive">
+          <table id="reservations-table" class="table">
+            <thead>
+              <tr>
+                <th>Responsável</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Mesa</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6" class="text-center">Carregando reservas...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/receptionist.js"></script>
+</body>
+</html>

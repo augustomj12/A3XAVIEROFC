@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garçom - Sistema de Reservas de Mesa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="app-title">Sistema de Reservas de Mesa</h1>
+      <p class="app-subtitle">Painel do Garçom</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">Sistema de Reservas</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receptionist.html">Recepcionista</a></li>
+        <li><a href="waiter.html" class="active">Garçom</a></li>
+        <li><a href="manager.html">Gerente</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="user-role">Garçom</div>
+      
+      <div class="alert-container"></div>
+
+      <div class="card fade-in">
+        <h3 class="card-title">Identificação do Garçom</h3>
+        
+        <div class="form-group">
+          <label for="waiter_id">Selecione Seu Nome</label>
+          <select id="waiter_id" name="waiter_id">
+            <option value="">Escolha seu nome da lista</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <h3 class="card-title">Reservas Pendentes de Confirmação</h3>
+        
+        <div class="table-responsive">
+          <table id="reservations-table" class="table">
+            <thead>
+              <tr>
+                <th>Responsável</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Mesa</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6" class="text-center">Carregando reservas...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/waiter.js"></script>
+</body>
+</html>

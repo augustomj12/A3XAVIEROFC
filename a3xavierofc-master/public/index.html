@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reservas de Mesa - Restaurante</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="app-title">Sistema de Reservas de Mesa</h1>
+      <p class="app-subtitle">Selecione sua função para continuar</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card fade-in">
+        <div class="card-title">Escolha Sua Função</div>
+        
+        <div class="form-row">
+          <div class="form-col">
+            <a href="receptionist.html" class="role-button">
+              <h3>Recepcionista</h3>
+              <p>Criar e gerenciar reservas de mesa</p>
+            </a>
+          </div>
+          
+          <div class="form-col">
+            <a href="waiter.html" class="role-button">
+              <h3>Garçom</h3>
+              <p>Confirmar atendimento das reservas</p>
+            </a>
+          </div>
+          
+          <div class="form-col">
+            <a href="manager.html" class="role-button">
+              <h3>Gerente</h3>
+              <p>Gerar relatórios e análises detalhadas</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    document.querySelectorAll('.role-button').forEach((button, index) => {
+      button.style.opacity = '0';
+      button.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        button.style.transition = 'all 0.3s ease-out';
+        button.style.opacity = '1';
+        button.style.transform = 'translateY(0)';
+      }, 100 + (index * 100));
+    });
+  </script>
+</body>
+</html>

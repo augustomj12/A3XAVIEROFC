@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerente - Sistema de Reservas de Mesa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="app-title">Sistema de Reservas de Mesa</h1>
+      <p class="app-subtitle">Painel do Gerente</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">Sistema de Reservas</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receptionist.html">Recepcionista</a></li>
+        <li><a href="waiter.html">Garçom</a></li>
+        <li><a href="manager.html" class="active">Gerente</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="user-role">Gerente</div>
+      
+      <div class="alert-container"></div>
+
+      <div class="card fade-in">
+        <h3 class="card-title">Relatórios Gerenciais</h3>
+        
+        <div class="form-row">
+          <div class="form-col">
+            <h4 class="mb-2">Relatório por Status e Período</h4>
+            <form id="status-report-form">
+              <div class="form-group">
+                <label for="status">Status da Reserva</label>
+                <select id="status" name="status">
+                  <option value="">Todos os Status</option>
+                  <option value="reserved">Reservada</option>
+                  <option value="fulfilled">Confirmada</option>
+                  <option value="cancelled">Cancelada</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="start_date">Data Inicial</label>
+                <input type="date" id="start_date" name="start_date" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="end_date">Data Final</label>
+                <input type="date" id="end_date" name="end_date" required>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn">Gerar Relatório</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="form-col">
+            <h4 class="mb-2">Relatório por Mesa</h4>
+            <form id="table-report-form">
+              <div class="form-group">
+                <label for="table_number">Número da Mesa</label>
+                <select id="table_number" name="table_number" required>
+                  <option value="">Selecione uma mesa</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn">Gerar Relatório</button>
+              </div>
+            </form>
+            
+            <h4 class="mb-2 mt-2">Relatório por Garçom</h4>
+            <form id="waiter-report-form">
+              <div class="form-group">
+                <label for="waiter_id">Garçom Responsável</label>
+                <select id="waiter_id" name="waiter_id" required>
+                  <option value="">Selecione um garçom</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn">Gerar Relatório</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="report-results">
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/manager.js"></script>
+</body>
+</html>
